@@ -5,13 +5,13 @@ import { uiModules } from  'ui/modules'
 import 'angulartics'
 import './angulartics-piwik'
 
-var app = uiModules.get('hack/piwik_tracker', ['angulartics', 'angulartics.piwik']);
+var app = uiModules.get('hack/piwik-tracker', ['angulartics', 'angulartics.piwik']);
 
 function PiwikTrackerController($scope, $element, config) {
 
-  let enabled = config.get('piwik_tracker:enabled');
-  let siteId = config.get('piwik_tracker:siteId');
-  let trackerUrl = config.get('piwik_tracker:trackerUrl');
+  let enabled = config.get('piwik-tracker:enabled');
+  let siteId = config.get('piwik-tracker:siteId');
+  let trackerUrl = config.get('piwik-tracker:trackerUrl');
 
   if (!enabled) {
     return;
@@ -19,19 +19,19 @@ function PiwikTrackerController($scope, $element, config) {
 
   if (trackerUrl === "undefined" && siteId === "undefined") {
     alert("The piwik tracker has been enabled, but tracker url and website ID are undefined.\n" +
-          "Please fill 'the piwik_tracker:trackerUrl' and 'the piwik_tracker:siteId' settings and refresh the page.")
+          "Please fill 'the piwik-tracker:trackerUrl' and 'the piwik-tracker:siteId' settings and refresh the page.")
     return;
   }
 
   if (trackerUrl === "undefined") {
     alert("The piwik tracker has been enabled, but tracker url is undefined.\n" +
-          "Please fill 'the piwik_tracker:trackerUrl' setting and refresh the page.")
+          "Please fill 'the piwik-tracker:trackerUrl' setting and refresh the page.")
     return;
   }
 
   if (siteId === "undefined") {
     alert("The piwik tracker has been enabled, but website ID is undefined.\n" +
-          "Please fill 'the piwik_tracker:siteId' setting and refresh the page.")
+          "Please fill 'the piwik-tracker:siteId' setting and refresh the page.")
     return;
   }
 
@@ -86,4 +86,4 @@ function jsUcfirst(string)
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-chrome.setRootController("piwik_tracker", PiwikTrackerController);
+chrome.setRootController("piwik-tracker", PiwikTrackerController);

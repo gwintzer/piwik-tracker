@@ -1,6 +1,6 @@
 {
-  "name": "piwik_tracker",
-  "version": "6.4.0",
+  "name": "piwik-tracker",
+  "version": "build",
   "description": "Enable the piwik tracking code on Kibana interfaces",
   "main": "index.js",
   "kibana": {

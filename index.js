@@ -1,23 +1,23 @@
 export default function (kibana) {
   return new kibana.Plugin({
     require: ['elasticsearch'],
-    name: 'piwik_tracker',
+    name: 'piwik-tracker',
     uiExports: {
 
       hacks: [
-        'plugins/piwik_tracker/hack'
+        'plugins/piwik-tracker/hack'
       ],
 
       uiSettingDefaults: {
-        'piwik_tracker:enabled': {
+        'piwik-tracker:enabled': {
           value: false,
           description: 'Enable the Kibana page tracking for all users of the instance'
         },
-        'piwik_tracker:siteId': {
+        'piwik-tracker:siteId': {
           value: "undefined",
           description: 'Set the website id'
         },
-        'piwik_tracker:trackerUrl': {
+        'piwik-tracker:trackerUrl': {
           value: "undefined",
           description: 'Set the tracker url'
         }

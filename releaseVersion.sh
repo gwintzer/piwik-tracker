@@ -55,7 +55,7 @@ cp build/${REPO}-${TAG_NAME}.zip build/${REPO}-${TAG_NAME_LATEST}.zip
 
 echo
 echo "Create Git tag for the new release"
-git tag -m "update to version ${TAG_NAME}" ${TAG_NAME} && git push --tags
+git tag -m "update to version ${KIBANA_VERSION}" ${KIBANA_VERSION} && git push --tags
 
 # create a formal release
 echo
@@ -63,8 +63,8 @@ echo "Create the release"
 github-release release \
     --user ${USER} \
     --repo ${REPO} \
-    --tag ${TAG_NAME} \
-    --name "v${TAG_NAME}" \
+    --tag ${KIBANA_VERSION} \
+    --name "v${KIBANA_VERSION}" \
     --description "Automatic plugin release for kibana v${KIBANA_VERSION}. " \
     --pre-release
 
@@ -74,7 +74,7 @@ echo "Upload the corresponding package file"
 github-release upload \
   --user ${USER} \
   --repo ${REPO} \
-  --tag  ${TAG_NAME} \
+  --tag  ${KIBANA_VERSION} \
   --name "${REPO}-${TAG_NAME}.zip" \
   --file build/${REPO}-${TAG_NAME}.zip
 
@@ -84,6 +84,6 @@ echo "Upload the corresponding package file"
 github-release upload \
   --user ${USER} \
   --repo ${REPO} \
-  --tag  ${TAG_NAME} \
+  --tag  ${KIBANA_VERSION} \
   --name "${REPO}-${TAG_NAME_LATEST}.zip" \
   --file build/${REPO}-${TAG_NAME_LATEST}.zip

@@ -86,4 +86,4 @@ function jsUcfirst(string)
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-chrome.setRootController("piwik-tracker", PiwikTrackerController);
+chrome.setRootController("root", PiwikTrackerController);

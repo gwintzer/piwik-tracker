@@ -6,7 +6,7 @@
 
 ## installation
 
-Manually download a release from Gitlab Tags section  
+Manually [download a release](https://github.com/gwintzer/piwik-tracker/releases) for your kibana version
 
 ```shell
 /opt/kibana/bin/kibana-plugin install <path-to-your-piwik_traker_release_package>.zip
